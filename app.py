@@ -1,6 +1,7 @@
 from flask import Flask
 import psycopg2
 
+
 conn = psycopg2.connect(
     host="localhost",
     database="suppliers",
