@@ -1,15 +1,18 @@
-from flask import Flask
+from flask import Flask, render_template
 import psycopg2
 
 
-conn = psycopg2.connect(
-    host="localhost",
-    database="suppliers",
-    user="postgres",
-    password="Abcd1234")
 
-app = Flask(__name__)
+
+app = Flask(__name__,template_folder='FRONT_END')
 
 @app.route("/")
-def hello_world():
-    return "<p><center><h1>SECOND HAND CAR SELLING MARKETPLACE</h1></center></p>"
+def homepage():
+    return render_template('index.html')
+
+
+@app.route("/login")
+def login():
+    return render_template('login.html')
+
+    
