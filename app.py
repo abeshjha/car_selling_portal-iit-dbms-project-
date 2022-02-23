@@ -1,5 +1,6 @@
 from asyncio.windows_events import NULL
 from flask import Flask, render_template,request,redirect
+from flask import Flask, render_template
 import psycopg2
 import os
 
@@ -19,6 +20,9 @@ app = Flask(__name__,template_folder='FRONT_END')
 @app.route("/")
 def hello_world():
     return "<p><center><h1>SECOND HAND CAR SELLING MARKETPLACE</h1></center></p>"
+def homepage():
+    return render_template('index.html')
+
 
 @app.route("/login")
 def login():
@@ -53,3 +57,4 @@ def login_handle():
 
 if (__name__== "__main__"):
     app.run(debug=True)
+    
