@@ -17,9 +17,29 @@ app = Flask(__name__,template_folder='FRONT_END')
 
 @app.route("/")
 def homepage():
-    return render_template('index.html')
+    postgreSQL_select_Query = "select * from brand LIMIT 3"
+    con= get_db_connection()
+    cursor=con.cursor()
+    cursor.execute(postgreSQL_select_Query)
+    print("Selecting rows from mobile table using cursor.fetchall ")
+    models = cursor.fetchall()
 
+    print("Print each row and it's columns values")
+    return render_template('index.html',models=models)
 
+@app.route("/test")
+def test():
+    postgreSQL_select_Query = "select * from brand LIMIT 3"
+    con= get_db_connection()
+    cursor=con.cursor()
+    cursor.execute(postgreSQL_select_Query)
+    print("Selecting rows from mobile table using cursor.fetchall ")
+    models = cursor.fetchall()
+
+    print("Print each row and it's columns values")
+    return render_template('test.html',models=models)
+   
+        
 @app.route("/login")
 def login():
     return render_template('login.html')
