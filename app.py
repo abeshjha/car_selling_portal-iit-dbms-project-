@@ -4,15 +4,14 @@ import psycopg2
 import os
 
 
-#def get_db_connection():
-#    con=psycopg2.connect(
-#        host="localhost",
-#        database="ecom",
-#        user="postgres",
-#        password="neerajdb"
-#    )
-#    return con 
-
+def get_db_connection():
+    con=psycopg2.connect(
+        host="john.db.elephantsql.com",
+        database="oxcbzzsv",
+        user="oxcbzzsv",
+        password="G0UGzkGcZ6X8OH_di8lpyT8REJ3nl6Qv"
+    )
+    return con
 
 app = Flask(__name__,template_folder='FRONT_END')
 
