@@ -76,18 +76,18 @@
                   <div id="mySidenav" class="sidenav">
                      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                      <a href="index.html">Home</a>
-                     <a href="fashion.html">Seller LogIn</a>
-                     <a href="electronic.html">Search Preferences</a>
-                     <a href="jewellery.html">Site Settings</a>
+                     <a href="login.html">Seller LogIn</a>
+                     <a href="preference.html">Search Preferences</a>
+                     <a href="settings.html">Site Settings</a>
                   </div>
                   <span class="toggle_icon" onclick="openNav()"><img src="../static/images/toggle-icon.png"></span>
                   <div class="dropdown">
                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All Category 
                      </button>
                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Branded Models</a>
-                        <a class="dropdown-item" href="#">Least Used</a>
-                        <a class="dropdown-item" href="#">Average Price</a>
+                        <a class="dropdown-item" href="#">All Advertisements</a>
+                        <a class="dropdown-item" href="/models">All Models</a>
+                        <a class="dropdown-item" href="/brands">All Brands</a>
                      </div>
                   </div>
                   <div class="main">
@@ -164,11 +164,11 @@
                      <div class="fashion_section_2">
                         <div class="row">
 
-                        {%for model in models %}
+                        {%for advertisement in advertisements %}
                            <div class="col-lg-4 col-sm-4">
                               <div class="box_main">
-                                 <h4 class="shirt_text">{{model[1]}}</h4>
-                                 <p class="price_text">Price  <span style="color: #262626;">$ 30</span></p>
+                                 <h4 class="shirt_text">{{advertisement[16]}}</h4>
+                                 <p class="price_text">Price  <span style="color: #262626;">{{advertisement[2]}}</span></p>
                                  <div class="tshirt_img"><img src="../static/images/car.png"></div>
                                  <div class="btn_main">
                                     <div class="buy_bt"><a href="#">Buy Now</a></div>
@@ -184,12 +184,7 @@
                </div>
               
             </div>
-            <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
-            <i class="fa fa-angle-left"></i>
-            </a>
-            <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
-            <i class="fa fa-angle-right"></i>
-            </a>
+            <div class="buynow_bt"><a href="/advertisement">View All Advertisements</a></div>
          </div>
       </div>
       <!-- fashion section end -->
@@ -199,53 +194,29 @@
             <div class="carousel-inner">
                <div class="carousel-item active">
                   <div class="container">
-                     <h1 class="fashion_taital">Best Value For Money</h1>
+                     <h1 class="fashion_taital">Brands Available</h1>
                      <div class="fashion_section_2">
                         <div class="row">
+                           {%for brand in brands %}
                            <div class="col-lg-4 col-sm-4">
                               <div class="box_main">
-                                 <h4 class="shirt_text">Laptop</h4>
+                                 <h4 class="shirt_text">{{brand[1]}}</h4>
                                  <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
-                                 <div class="electronic_img"><img src="images/laptop-img.png"></div>
+                                 <div class="electronic_img"><img src="../static/images/model.jpg"></div>
                                  <div class="btn_main">
                                     <div class="buy_bt"><a href="#">Buy Now</a></div>
                                     <div class="seemore_bt"><a href="#">See More</a></div>
                                  </div>
                               </div>
                            </div>
-                           <div class="col-lg-4 col-sm-4">
-                              <div class="box_main">
-                                 <h4 class="shirt_text">Mobile</h4>
-                                 <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
-                                 <div class="electronic_img"><img src="images/mobile-img.png"></div>
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-lg-4 col-sm-4">
-                              <div class="box_main">
-                                 <h4 class="shirt_text">Computers</h4>
-                                 <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
-                                 <div class="electronic_img"><img src="images/computer-img.png"></div>
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
-                                 </div>
-                              </div>
-                           </div>
+                           {% endfor %}
+                         
                         </div>
                      </div>
                   </div>
                </div>
             </div>
-            <a class="carousel-control-prev" href="#electronic_main_slider" role="button" data-slide="prev">
-            <i class="fa fa-angle-left"></i>
-            </a>
-            <a class="carousel-control-next" href="#electronic_main_slider" role="button" data-slide="next">
-            <i class="fa fa-angle-right"></i>
-            </a>
+            <div class="buynow_bt"><a href="/brands">View all Brands</a></div>
          </div>
       </div>
       <!-- electronic section end -->
@@ -255,54 +226,30 @@
             <div class="carousel-inner">
                <div class="carousel-item active">
                   <div class="container">
-                     <h1 class="fashion_taital">Most Picked</h1>
+                     <h1 class="fashion_taital">Models Available</h1>
                      <div class="fashion_section_2">
                         <div class="row">
+                           {%for model in models %}
                            <div class="col-lg-4 col-sm-4">
                               <div class="box_main">
-                                 <h4 class="shirt_text">Jumkas</h4>
+                                 <h4 class="shirt_text">{{model[1]}}</h4>
                                  <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
-                                 <div class="jewellery_img"><img src="images/jhumka-img.png"></div>
+                                 <div class="jewellery_img"><img src="../static/images/brand.jpg"></div>
                                  <div class="btn_main">
                                     <div class="buy_bt"><a href="#">Buy Now</a></div>
                                     <div class="seemore_bt"><a href="#">See More</a></div>
                                  </div>
                               </div>
                            </div>
-                           <div class="col-lg-4 col-sm-4">
-                              <div class="box_main">
-                                 <h4 class="shirt_text">Necklaces</h4>
-                                 <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
-                                 <div class="jewellery_img"><img src="images/neklesh-img.png"></div>
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-lg-4 col-sm-4">
-                              <div class="box_main">
-                                 <h4 class="shirt_text">Kangans</h4>
-                                 <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
-                                 <div class="jewellery_img"><img src="images/kangan-img.png"></div>
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
-                                 </div>
-                              </div>
-                           </div>
+                           {% endfor %}
+                         
                         </div>
                      </div>
                   </div>
                </div>
                
             </div>
-            <a class="carousel-control-prev" href="#jewellery_main_slider" role="button" data-slide="prev">
-            <i class="fa fa-angle-left"></i>
-            </a>
-            <a class="carousel-control-next" href="#jewellery_main_slider" role="button" data-slide="next">
-            <i class="fa fa-angle-right"></i>
-            </a>
+            <div class="buynow_bt"><a href="/models">View All Models</a></div>
             <div class="loader_main">
                <div class="loader"></div>
             </div>

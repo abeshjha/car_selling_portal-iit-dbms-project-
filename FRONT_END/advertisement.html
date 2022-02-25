@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <title>Advertisements</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+      <link rel="stylesheet" href="../static/css/responsive.css">
+      <link rel="icon" href="../static/images/fevicon.png" type="image/gif" />
+      <link rel="stylesheet" href="../static/css/jquery.mCustomScrollbar.min.css">
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Poppins:400,700&display=swap&subset=latin-ext" rel="stylesheet">
+      <link rel="stylesheet" href="css/owl.carousel.min.css">
+      <link rel="stylesoeet" href="css/owl.theme.default.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+   </head>
+   <body>
+      <!-- banner bg main start -->
+      <div class="banner_bg_main">
+        
+         <div class="banner_section layout_padding">
+            <div class="container">
+               <div id="my_slider" class="carousel slide" data-ride="carousel">
+                  <div class="carousel-inner">
+                     <div class="carousel-item active">
+                        <div class="row">
+                           <div class="col-sm-12">
+                              <h1 class="banner_taital" style="color: #f0eeebec;">Latest</br>Advertisements</h1>
+                           </div>
+                        </div>
+                     </div>
+                     
+                  </div>
+                 
+               </div>
+            </div>
+         </div>
+         <!-- banner section end -->
+      </div>
+      <div class="fashion_section">
+         <div id="main_slider" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+               <div class="carousel-item active">
+                  <div class="container">
+                     <div class="fashion_section_2">
+                        <div class="row">
+
+                            {%for item in items %}
+                           <div class="col-lg-4 col-sm-4">
+                              <div class="box_main">
+                                 <h4 class="shirt_text">{{item[16]}}</h4>
+                                 <p class="price_text">Price  <span style="color: #262626;">{{item[2]}}</span></p>
+                                 <div class="tshirt_img"><img src="../static/images/car.png"></div>
+                                 <div class="btn_main">
+                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                    <div class="seemore_bt"><a href="#">See More</a></div>
+                                 </div>
+                              </div>
+                           </div>
+                           {% endfor %}
+                           
+                        </div>
+                     </div>
+                  </div>
+               </div>
+              
+            </div>
+           
+         </div>
+      </div>
+      
+     
+      </div>
+
+  
+   </body>
+</html>
