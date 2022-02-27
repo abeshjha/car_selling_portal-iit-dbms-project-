@@ -93,11 +93,11 @@
                   <div class="main">
                      <!-- Another variation with a button -->
                      <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search cars">
+                        <input type="text" class="form-control" name= "keywords" placeholder="Search cars">
                         <div class="input-group-append">
-                           <button class="btn btn-secondary" type="button" style="background-color: #f26522; border-color:#f26522 ">
+                           <a href="/search/name" class="btn btn-secondary" type="button" style="background-color: #f26522; border-color:#f26522 ">
                            <i class="fa fa-search"></i>
-                           </button>
+                           </a>
                         </div>
                      </div>
                   </div>
@@ -171,8 +171,7 @@
                                  <p class="price_text">Price  <span style="color: #262626;">{{advertisement[2]}}</span></p>
                                  <div class="tshirt_img"><img src="../static/images/car.png"></div>
                                  <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
+                                    <div class="buy_bt"><a href="/single/{{advertisement[0]}}">See More</a></div>
                                  </div>
                               </div>
                            </div>
@@ -204,8 +203,7 @@
                                  <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
                                  <div class="electronic_img"><img src="../static/images/model.jpg"></div>
                                  <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
+                                    <div class="buy_bt"><a href="/filter/{{brand[0]}}/brand_id">See More</a></div>
                                  </div>
                               </div>
                            </div>
@@ -236,8 +234,7 @@
                                  <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
                                  <div class="jewellery_img"><img src="../static/images/brand.jpg"></div>
                                  <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="#">See More</a></div>
+                                    <div class="buy_bt"><a href="/filter/{{model[0]}}/model_id">See More</a></div>
                                  </div>
                               </div>
                            </div>

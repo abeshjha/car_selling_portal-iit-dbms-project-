@@ -73,6 +73,37 @@ def brands():
     print("Print each row and it's columns values")
     return render_template('brands.html',brands=brands)
 
+@app.route("/search/<string:name>")
+def search(name):
+    postgreSQL_select_Query = "select * from advertisements where brand_id IN (select brand_id from brand where brand_name LIKE '%{}%') ;".format(name.upper())
+    print(postgreSQL_select_Query)
+    con= get_db_connection()
+    cursor=con.cursor()
+    cursor.execute(postgreSQL_select_Query)
+    items = cursor.fetchall()
+    return render_template('search.html',items=items)
+
+@app.route("/filter/<int:id>/<string:name>")
+def filter(id,name):
+    postgreSQL_select_Query = "select * from advertisements where {} = {};".format(name,id)
+    print(postgreSQL_select_Query)
+    con= get_db_connection()
+    cursor=con.cursor()
+    cursor.execute(postgreSQL_select_Query)
+    items = cursor.fetchall()
+    return render_template('search.html',items=items)
+
+@app.route("/single/<int:id>")
+def single(id):
+    postgreSQL_select_Query = "select * from advertisements where ad_id = {};".format(id)
+    con= get_db_connection()
+    cursor=con.cursor()
+    cursor.execute(postgreSQL_select_Query)
+    ad = cursor.fetchall()
+    print(ad)
+    return render_template('single.html',ad=ad)
+   
+
 @app.route("/test")
 def test():
     postgreSQL_select_Query = "select * from advertisements LIMIT 3"
