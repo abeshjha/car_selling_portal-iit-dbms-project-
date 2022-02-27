@@ -167,11 +167,12 @@
                         {%for advertisement in advertisements %}
                            <div class="col-lg-4 col-sm-4">
                               <div class="box_main">
-                                 <h4 class="shirt_text">{{advertisement[16]}}</h4>
-                                 <p class="price_text">Price  <span style="color: #262626;">{{advertisement[2]}}</span></p>
+                                 <h4 class="shirt_text">Brand: {{advertisement[3]}}</h4>
+                                 <h4 class="shirt_text">Model: {{advertisement[2]}}</h4>
+                                 <p class="price_text">Price  <span style="color: #262626;">{{advertisement[1]}}</span></p>
                                  <div class="tshirt_img"><img src="../static/images/car.png"></div>
-                                 <div class="btn_main">
-                                    <div class="buy_bt"><a href="/single/{{advertisement[0]}}">See More</a></div>
+                                 <div class="btn_main" style="margin-top: 0px;">
+                                    <div class="buy_bt"><a href="/single/{{advertisement[0]}}">Buy Now</a></div>
                                  </div>
                               </div>
                            </div>
@@ -200,7 +201,6 @@
                            <div class="col-lg-4 col-sm-4">
                               <div class="box_main">
                                  <h4 class="shirt_text">{{brand[1]}}</h4>
-                                 <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
                                  <div class="electronic_img"><img src="../static/images/model.jpg"></div>
                                  <div class="btn_main">
                                     <div class="buy_bt"><a href="/filter/{{brand[0]}}/brand_id">See More</a></div>
@@ -231,7 +231,6 @@
                            <div class="col-lg-4 col-sm-4">
                               <div class="box_main">
                                  <h4 class="shirt_text">{{model[1]}}</h4>
-                                 <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
                                  <div class="jewellery_img"><img src="../static/images/brand.jpg"></div>
                                  <div class="btn_main">
                                     <div class="buy_bt"><a href="/filter/{{model[0]}}/model_id">See More</a></div>

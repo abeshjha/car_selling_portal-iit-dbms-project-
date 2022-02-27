@@ -20,7 +20,11 @@ app = Flask(__name__,template_folder='FRONT_END')
 
 @app.route("/")
 def homepage():
-    advertisement_query = "select * from advertisements ORDER BY random() LIMIT 3"
+    advertisement_query = ("""WITH 
+                            f1 as (SELECT  * from advertisements ORDER BY random() LIMIT 3),
+                            f3 as (SELECT ad_id,ad_price,model_name,brand_name from brand,model,f1 where  f1.model_id = model.model_id 
+                                    AND f1.brand_id = brand.brand_id )
+                             SELECT * from f3;""")
     brand_query = "select * from brand ORDER BY random() LIMIT 3"
     model_query = "select * from model ORDER BY random() LIMIT 3"
     con= get_db_connection()
@@ -35,8 +39,7 @@ def homepage():
     cursor.execute(model_query)
     models = cursor.fetchall()
     
-    print(models)
-    print(brands)
+    print(advertisements)
     return render_template('index.html',advertisements=advertisements,models=models,brands=brands)
 
 @app.route("/models")
@@ -53,7 +56,11 @@ def models():
 
 @app.route("/advertisement")
 def advertisement():
-    postgreSQL_select_Query = "select * from advertisements LIMIT 100"
+    postgreSQL_select_Query = ("""WITH 
+                            f1 as (SELECT  * from advertisements ORDER BY random() LIMIT 100),
+                            f3 as (SELECT ad_id,ad_price,model_name,brand_name from brand,model,f1 where  f1.model_id = model.model_id 
+                                    AND f1.brand_id = brand.brand_id )
+                             SELECT * from f3;""")
     con= get_db_connection()
     cursor=con.cursor()
     cursor.execute(postgreSQL_select_Query)
