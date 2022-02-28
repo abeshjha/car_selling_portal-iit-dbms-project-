@@ -18,15 +18,19 @@ Cufon.replace('h3', { fontFamily: 'GeosansLight' });
 <!-- START PAGE SOURCE -->
 <div id="main_container">
   <div class="header">
-    <div class="logo"><a href="#">Car Description</a></div>
+    <div class="logo"><a href="#"><center>Car Detail Description</center></a></div>
   </div>
   
-
+  {%for ad in ads %}
       <div class="row">
         <div class="col-lg-6 col-sm-6">
-          <h1>The advertisement of this car was put on </h1>
-          <p class="home_intro">Url of the car {{ad[]}} </p>
-          <div class="buttons"> <a href="#"><img src="../static/images/order_now.gif" width = "50%" alt="" border="0" /></a> <a href="#"></a> </div>
+          
+          <h3><bold><p>Ad ID:  {{ad[0]}} </p></bold></h2>
+          <h3><bold><p >Car Model: {{ad[2]}} </p></bold></h2>
+          <h3><bold><p >Car Brand: {{ad[3]}} </p></bold></h2>
+          <h3><bold><p >Car Price: {{ad[1]}} </p></bold></h2>
+         
+          <div class="buttons"> <a href="/order/{{ad[0]}}/{{ad[1]}}"><img src="../static/images/order_now.gif" width = "50%" alt="" border="0" /></a> <a href="#"></a> </div>
         </div>
         <div class="col-lg-6 col-sm-6">
           <div class="pack_pic"> <img src="../static/images/single.jpg" alt="" border="0" /> 
@@ -40,76 +44,94 @@ Cufon.replace('h3', { fontFamily: 'GeosansLight' });
       <h2>Top Features</h2>
       <div class="feat_box"> <img src="../static/images/f1.png" alt="" border="0" class="feat_thumb" />
         <div class="feat_details">
-          <h3>voluptate velit cillum</h3>
-          <p class="feat_text"> Duis aute irure dolor in reprehenderit in voluptate <a href="#">velit</a> esse cillum dolore eu fugiat nulla pariatur.</p>
+          <h3>Mileage </h3>
+          <p>{{ad[4]}}</p>
         </div>
       </div>
       <div class="feat_box"> <img src="../static/images/f2.png" alt="" border="0" class="feat_thumb" />
         <div class="feat_details">
-          <h3>sunt in culpa qui officia</h3>
-          <p class="feat_text"> Excepteur sint occaecat <a href="#">cupidatat</a> non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+          <h3>Clime </h3>
+          <p>{{ad[5]}}</p>
         </div>
       </div>
       <div class="feat_box"> <img src="../static/images/f3.png" alt="" border="0" class="feat_thumb" />
         <div class="feat_details">
-          <h3>eu fugiat nulla pariatur</h3>
-          <p class="feat_text"> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          <h3>Gas </h3>
+          <p>{{ad[6]}}</p>
         </div>
       </div>
       <div class="feat_box"> <img src="../static/images/f4.png" alt="" border="0" class="feat_thumb" />
         <div class="feat_details">
-          <h3>voluptate velit cillum</h3>
-          <p class="feat_text"> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          <h3>Shifter </h3>
+          <p>{{ad[7]}}</p>
         </div>
       </div>
       <div class="feat_box"> <img src="../static/images/f5.png" alt="" border="0" class="feat_thumb" />
         <div class="feat_details">
-          <h3>sunt in culpa qui officia</h3>
-          <p class="feat_text"> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+          <h3>Person Capacity </h3>
+          <p>{{ad[8]}}</p>
         </div>
       </div>
       <div class="feat_box"> <img src="../static/images/f6.png" alt="" border="0" class="feat_thumb" />
         <div class="feat_details">
-          <h3>eu fugiat nulla pariatur</h3>
-          <p class="feat_text"> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          <h3>doorsnumber </h3>
+          <p>{{ad[9]}}</p>
         </div>
       </div>
       <div class="latest_news">
-        <h1>Product Updates</h1>
+        <h1>Other Features</h1>
         <div class="news_box"> <img src="../static/images/calendar.png" alt="" border="0" class="feat_thumb" />
           <div class="news_details">
-            <h2><a href="#">Duis aute irure dolor in reprehenderit in voluptate velit esse</a></h2>
-            <p class="feat_text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+            <h2>documentvalid </h2>
+            <p>{{ad[10]}}</p>
           </div>
         </div>
         <div class="news_box"> <img src="../static/images/calendar.png" alt="" border="0" class="feat_thumb" />
           <div class="news_details">
-            <h2><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing</a></h2>
-            <p class="feat_text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+            <h2>color </h2>
+            <p>{{ad[11]}}</p>
           </div>
         </div>
       </div>
     </div>
     <div class="right_content">
-      <h2>What clients say?</h2>
+      <h2>Other Details</h2>
       <div class="testimonial_box">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do <a href="#">eiusmod tempor</a> incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
+       <p> Region : </p>
         <div class="testimonial_details">
-          <p>John Doe, Company name</p>
+          <p>{{ad[18]}}</p>
         </div>
       </div>
       <div class="testimonial_box">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do <a href="#">eiusmod tempor</a> incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
+        <p> Postal Code : </p>
+         <div class="testimonial_details">
+           <p>{{ad[17]}}</p>
+         </div>
+       </div>
+      <div class="testimonial_box">
+        <p> Ad URL : </p>
         <div class="testimonial_details">
-          <p>John Doe, Company name</p>
+          <p>{{ad[13]}}</p>
         </div>
       </div>
       <div class="testimonial_box">
-        <p>Sed do <a href="#">eiusmod tempor</a> incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
+        <p> Catalog URL : </p>
         <div class="testimonial_details">
-          <p>John Doe, Company name</p>
+          <p>{{ad[14]}}</p>
+        </div>
+      </div>
+      <div class="testimonial_box">
+        <p> Download Date : </p>
+        <div class="testimonial_details">
+          <p>{{ad[15]}}</p>
+        </div>
+      </div>
+      <div class="testimonial_box">
+        <p> Sales Update Date : </p>
+        <div class="testimonial_details">
+          <p>{{ad[16]}}</p>
         </div>
       </div>
 
-
+      {% endfor %}
 </html>

@@ -69,9 +69,10 @@
                             {%for item in items %}
                            <div class="col-lg-4 col-sm-4">
                               <div class="box_main">
-                                 <h4 class="shirt_text">{{item[1]}}</h4>
-                                 <p class="price_text">Price  <span style="color: #262626;">$ 30</span></p>
-                                 <div class="tshirt_img"><img src="../static/images/brand.jpg"></div>
+                                 <h4 class="shirt_text">Brand: {{item[3]}}</h4>
+                                 <h4 class="shirt_text">Model: {{item[2]}}</h4
+                                 <p class="price_text">Price  <span style="color: #262626;">{{item[1]}}</span></p>
+                                 <div class="tshirt_img"><img src="../../static/images/brand.jpg"></div>
                                  <div class="btn_main">
                                     <div class="buy_bt"><a href="/single/{{item[0]}}">Buy Now</a></div>
                                  </div>

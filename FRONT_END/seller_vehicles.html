@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link href="https://fonts.googleapis.com/css?family=Francois+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../static/css/styles1.css">
+<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<script src="../static/js/script1.js"></script>  
+
+  <style>
+    html,body {width: 100%;height: 100%;}
+    * { margin: 0px;} 
+    .c1{display: inline-block; width:95%;height:30px;margin-top: 20px;border-color: darkgray; border-radius: 5px;
+     vertical-align: top;}
+     .clickme { background-color: #EEEEEE;font-size:30px;padding: 20px 20px;text-decoration:none;font-weight:bold;
+     border-radius:5px;cursor:pointer;margin-left:76%;
+}
+
+.danger {
+    background-color:#FF0040;
+    color: #FFFFFF;
+}
+.danger:hover {
+    background-color:#EB003B;
+    color: #FFFFFF;
+}
+   </style>
+</head>
+<body>
+<div id='cssmenu' bgcolor="black">
+<ul>
+   <li ><a href='/seller_dashboard'><span>Dashboard</span></a></li>
+   <li class='active'><a href='#'><span>My Advertisements</span></a></li>
+   <li><a href='/buyers'><span>Buyers</span></a></li>
+   <li><a href='/login'><span>Log Out</span></a></li>
+   <li style="position:absolute;right:100px;"><a  style="font-size:40px;font-family: 'Russo One', sans-serif;
+   padding:20px;background-color:blue;"><span>Seller's Portal</span></a></li>
+</ul>
+</div><br><br>
+<div class="c1" style="font-family: 'Russo One', sans-serif; ">
+              <a  href="/add_vehicle" style="text-decoration:none;" class="clickme danger" >   
+                ADD Vehicle
+              </a>  
+        </div>
+        
+<div class="container" style="">
+  <h2 style=" text-align:center;font-family: 'Russo One', sans-serif;" >MY Advertisements</h2>                                                                                    
+  <div class="table-responsive">          
+  <table class="table">
+    <thead>
+       <tr style="font-size:18px;">
+        <th>Add Id</th>
+          <th>Brand</th>
+          <th>Model</th>
+          <th>Mileage</th>  
+          <th>Person capacity</th>
+          <th>Vehicle Catalog</th>
+          <th>Delete</th>
+      </tr>
+     </thead>
+  <tbody>
+    {%for x in lst%}
+        <tbody name="tb">
+         <tr name="tr">
+                    <td>{{x[0]}}</td>
+                    <td>{{x[1]}}</td>
+                    <td>{{x[2]}}</td>
+                    <td>{{x[3]}}</td>
+                    <td>{{x[4]}}</td>
+                    <td>{{x[5]}}</td>
+                   <td><a href="/ad_remove/{{x[0]}}" >remove</a></td> 
+
+  </tr></tbody>
+  {%endfor%}
+</table>
+  </div>
+</div>
+
+
+</body>
+</html>

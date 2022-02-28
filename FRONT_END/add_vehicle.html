@@ -1,0 +1,353 @@
+<html>
+<head>
+
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+<style>
+  html,body{width:100%;height:100%;}
+  input,select{border-width:2px;margin:10px;height:25px;width:70%;border-color:black;border-radius:10px;outline:none;}
+  textarea{margin:10px;height:50px;width:70%;border-color:black;border-radius:10px;border-width:2px;} 
+.label1{ padding:10px;margin-bottom:20px;font-family: 'Roboto', sans-serif;}
+.fs{margin-left:25%; width:70%;}
+</style>
+
+</head>
+<body>
+
+<form class="fs" action="/add_vehicle_handle"  method="POST" >
+
+
+<!-- Form Name -->
+<legend style="color:white;background-color:black;width:70%;height:50px;font-size:40px;">&nbsp;&nbsp;&nbsp;&nbsp;Add Advertisement Details
+</legend>
+<br><br>
+
+
+<!-- Text input-->
+<div >
+  <label class="label1" for="product_name">Production Date(YYYY-MM-DD)</label>  
+  <div >
+  <input id="product_name" name="production" required="" type="text">
+    
+  </div>
+</div>
+<div >
+  <label class="label1" for="product_name">Mileage</label>  
+  <div >
+  <input  name="mileage" required="" type="text">
+    
+  </div>
+</div>
+<!-- Text input-->
+<div>
+  <label class="label1" for="product_name_fr">Person Capacity</label>  
+  <div >
+  <input  name="person_capacity"  required="" type="text">
+    
+  </div>
+</div>
+<div>
+    <label class="label1" >Region ID</label>  
+    <div >
+    <input  name="region_id"  required="" type="text">
+      
+    </div>
+  </div>
+  <div>
+    <label class="label1" >Num Pictures</label>  
+    <div >
+    <input  name="num_pictures"  required="" type="text">
+      
+    </div>
+  </div>
+<!-- Select Basic -->
+<div >
+  <label class="label1" >Pro Seller</label>
+  <div >
+    <select id="product_category" name="pro_seller" style="width:30%;" >
+    <option value="TRUE">TRUE</option>
+    <option value="FLASE">FLASE</option>
+    </select>
+  </div>
+</div>
+    <div>
+        <label class="label1" for="product_name_fr">Adoldness</label>  
+        <div >
+        <input  name="adoldness"  required="" type="text">
+          
+        </div>
+      </div>
+      <div>
+        <label class="label1" for="product_name_fr">Postal Code</label>  
+        <div >
+        <input  name="postal_code"  required="" type="text">
+          
+        </div>
+      </div>
+
+      <div >
+      <label class="label1" >Clime Name</label>
+      <div >
+        <select id="product_category" name="clime_id" style="width:30%;" >
+        <option value="1">no AC</option>
+         <option value="2">Manual AC</option>
+        <option value="3">Automatic AC</option> 
+        <option value="4">Digital AC</option>
+        <option value="5">Digital 2zone AC</option>
+         <option value="6">Digital multizone AC</option>
+        
+    
+        </select>
+      </div>
+    </div>
+    <div >
+    <label class="label1" >Shifter</label>
+    <div >
+      <select id="product_category" name="shifter" style="width:30%;" >
+      <option value="M0">M0</option>
+       <option value="M5">M5</option>
+      <option value="T5">T5</option> 
+      <option value="M6">M6</option>
+      <option value="T4">T4</option>
+       <option value="T6">T6</option>
+      
+  
+      </select>
+    </div>
+  </div>
+  <div>
+    <label class="label1" for="product_name_fr">Doorsnumber</label>  
+    <div >
+    <input id="product_description" name="doorsnumber"  required="" type="text">
+      
+    </div>
+  </div>
+  <div >
+    <label class="label1" for="product_name">Document Validity Date(YYYY-MM-DD)</label>  
+    <div >
+    <input id="product_name" name="documentvalid" required="" type="text">
+      
+    </div>
+  </div>
+  <div>
+    <label class="label1" for="product_name_fr">Postal Code</label>  
+    <div >
+    <input id="product_description" name="postal_code"  required="" type="text">
+      
+    </div>
+  </div>
+  <div >
+    <label class="label1" for="product_name">Color</label>  
+    <div >
+    <input id="product_name" name="color" required="" type="text">
+      
+    </div>
+  </div>
+  <div >
+    <label class="label1" for="product_name">Brand Id</label>  
+    <div >
+    <input id="product_name" name="brand_id" required="" type="text">
+      
+    </div>
+  </div>
+  <div >
+    <label class="label1" for="product_name">Model Id</label>  
+    <div >
+    <input id="product_name" name="model_id" required="" type="text">
+      
+    </div>
+  </div>
+  <div >
+    <label class="label1" for="product_name">CCM</label>  
+    <div >
+    <input id="product_name" name="ccm" required="" type="text">
+      
+    </div>
+  </div>
+  <div >
+    <label class="label1" for="product_name">Catalog URL</label>  
+    <div >
+    <input id="product_name" name="catalog_url" required="" type="text">
+      
+    </div>
+  </div>
+
+  <div >
+  <label class="label1" >CATEGORY</label>
+  <div >
+    <select id="product_category" name="category_id" style="width:30%;" >
+    <option value="1">C-Segment</option>
+     <option value="2">M-Segment</option>
+    <option value="3">D-Segment</option> 
+    <option value="4">B-Segment</option>
+    <option value="5">Utility</option>
+     <option value="6">E-Segment</option>
+     <option value="7">A-Segment</option> 
+     <option value="8">F-Segment</option>
+     <option value="9">J-Segment</option>
+      <option value="10">NA</option>
+
+    </select>
+  </div>
+</div>
+<div >
+    <label class="label1" for="product_name">Start Production Date(YYYY-MM-DD)</label>  
+    <div >
+    <input id="product_name" name="start_production" required="" type="text">
+      
+    </div>
+  </div>
+  <div >
+    <label class="label1" for="product_name">End Production Date(YYYY-MM-DD)</label>  
+    <div >
+    <input id="product_name" name="end_production" required="" type="text">
+      
+    </div>
+  </div>
+<!-- Text input-->
+<div >
+  <label class="label1" >Manufacturer’s Suggested Retail Price</label>  
+  <div>
+  <input id="available_quantity" name="msrp" required="" type="text">
+    
+  </div>
+</div>
+<div >
+    <label class="label1" >Car Type Id</label>  
+    <div>
+    <input id="available_quantity" name="car_type_id" required="" type="text">
+      
+    </div>
+  </div>
+<!-- Text input-->
+<div >
+  <label class="label1" > WEIGHT</label>  
+  <div class="col-md-4">
+  <input id="product_weight" name="weight"  type="text">
+    
+  </div>
+</div>
+
+<div >
+    <label class="label1" >Fuel Tank Capacity</label>  
+    <div>
+    <input  name="fuel_tank" required="" type="text">
+      
+    </div>
+  </div>
+  <div >
+    <label class="label1" >Boot Capacity</label>  
+    <div>
+    <input  name="boot_capacity"  type="text">
+      
+    </div>
+  </div>
+<!-- Textarea -->
+<div >
+  <label class="label1" >Fuel</label>  
+  <div>
+  <input   name="fuel"  required="" type="text">
+    
+  </div>
+</div>
+
+<div >
+    <label class="label1" >Environmental Name</label>
+    <div >
+      <select id="product_category" name="environmental_id" style="width:30%;" >
+      <option value="1">EURO 1</option>
+       <option value="2">EURO 2</option>
+      <option value="3">EURO 3</option> 
+      <option value="4">EURO 4</option>
+      <option value="5">EURO 5</option>
+       <option value="6">EURO 6</option>
+       <option value="7">NA</option> 
+  
+      </select>
+    </div>
+  </div>
+
+  <div >
+    <label class="label1" >Cylinder Layout</label>  
+    <div>
+    <input   name="cylinder_layout"  required="" type="text">
+      
+    </div>
+  </div>
+  <div >
+    <label class="label1" >Cylinder Quantity</label>  
+    <div>
+    <input   name="cylinder"  required="" type="text">
+      
+    </div>
+  </div>
+  <div >
+    <label class="label1" >Drive Name</label>
+    <div >
+      <select id="product_category" name="drive_id" style="width:30%;" >
+      <option value="1">FWD</option>
+       <option value="2">RWD</option>
+      <option value="3">NA</option> 
+      <option value="4">AWD</option>
+  
+      </select>
+    </div>
+  </div>
+  <div >
+    <label class="label1" >Consumption City</label>  
+    <div>
+    <input   name="consump_city"  required="" type="text">
+      
+    </div>
+  </div>
+  <div >
+    <label class="label1" >Consumption Highway</label>  
+    <div>
+    <input   name="consump_highway"  required="" type="text">
+      
+    </div>
+  </div>
+  <div >
+    <label class="label1" >Consumption Mixed</label>  
+    <div>
+    <input  name="consump_mixed"  required="" type="text">
+      
+    </div>
+  </div>
+  <div >
+    <label class="label1" >Top Speed</label>  
+    <div>
+    <input  name="top_speed"  required="" type="text">
+      
+    </div>
+  </div>
+  <div >
+    <label class="label1" >Acceleration</label>  
+    <div>
+    <input   name="acceleration"  required="" type="text">
+      
+    </div>
+  </div>
+  <div >
+    <label class="label1" >Torque</label>  
+    <div>
+    <input   name="torque"  required="" type="text">
+      
+    </div>
+  </div>
+  <div >
+    <label class="label1" >Power</label>  
+    <div>
+    <input id="product_price"  name="power"  required="" type="text">
+      
+    </div>
+  </div>
+
+<input type="submit"  value="ADD"  style="cursor:pointer;background-color:black;color:white;border-color:black;" >
+
+            
+        <br> <br> <br>
+
+
+</form>
+<body>
+</html>
