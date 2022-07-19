@@ -10,10 +10,10 @@ app = Flask(__name__,template_folder='FRONT_END')
 app.secret_key = "rrfghhthtgtrs"
 def get_db_connection():
     con=psycopg2.connect(
-        host="10.17.10.70",
-        database="group_33",
-        user="group_33",
-        password="BuHnPs9GNsUfQ"
+        host="john.db.elephantsql.com",
+        database="oxcbzzsv",
+        user="oxcbzzsv",
+        password="G0UGzkGcZ6X8OH_di8lpyT8REJ3nl6Qv"
     )
     return con
 
